@@ -1,5 +1,6 @@
 class Solution {
 public:
+// done in a better way but there is a optimal approach
     bool binarySearch(vector<int> arr, int target){
         int n = arr.size();
         int low = 0;
