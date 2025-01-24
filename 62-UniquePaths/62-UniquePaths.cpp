@@ -1,6 +1,6 @@
 class Solution {
     int count(int i, int j, int m , int n, vector<vector<int>> &dp){
-        if(i == m-1 && j == n-1){
+        if(i == m && j == n){
             return 1;
         }
         if(i>m || j > n ){
@@ -13,7 +13,7 @@ class Solution {
     }
 public:
     int uniquePaths(int m, int n) {
-        vector<vector<int>> dp(m+1,vector<int>( n+1,-1));
-        return count(0,0,m,n,dp);
+        vector<vector<int>> dp(m,vector<int>( n,-1));
+        return count(0,0,m-1,n-1,dp);
     }
 };
