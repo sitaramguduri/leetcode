@@ -8,19 +8,14 @@ public:
         map<char,int> mp;
         while(r<n ){
             if(mp.find(s[r]) == mp.end()){
-                // len
-                // cout<<"r: "<<r<<" l: "<<l<<endl; 
                 int f = s[r];
-                len = max(len, r-l+1);
-                mp[s[r]] = r;
-                r++;
             }else{
                 l = max(l,mp[s[r]] +1);
-                len = max(len, r-l+1);
-                mp[s[r]] = r;
                 
-                r++;
             }
+            len = max(len, r-l+1);
+            mp[s[r]] = r;    
+            r++;
         }
         return len;
 
