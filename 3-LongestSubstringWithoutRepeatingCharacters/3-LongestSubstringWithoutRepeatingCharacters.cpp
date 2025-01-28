@@ -5,19 +5,24 @@ public:
         int r = 0;
         int n = s.size();
         int len = 0;
-        set<char> mp ;
-        while(l<n && r < n){
+        map<char,int> mp;
+        while(r<n ){
             if(mp.find(s[r]) == mp.end()){
-                mp.insert(s[r]);
-                len = max(len,r-l+1);
+                // len
+                // cout<<"r: "<<r<<" l: "<<l<<endl; 
+                int f = s[r];
+                len = max(len, r-l+1);
+                mp[s[r]] = r;
                 r++;
             }else{
-                mp.erase(s[l]);
-                l++;
+                l = max(l,mp[s[r]] +1);
+                len = max(len, r-l+1);
+                mp[s[r]] = r;
+                
+                r++;
             }
-            
-            
         }
         return len;
+
     }
 };
