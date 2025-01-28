@@ -8,10 +8,9 @@ public:
         map<char,int> mp;
         while(r<n ){
             if(mp.find(s[r]) == mp.end()){
-                int f = s[r];
+                // int f = s[r];
             }else{
-                l = max(l,mp[s[r]] +1);
-                
+                l = max(l,mp[s[r]] +1); 
             }
             len = max(len, r-l+1);
             mp[s[r]] = r;    
