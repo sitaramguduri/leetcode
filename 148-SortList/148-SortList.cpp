@@ -34,12 +34,6 @@ public:
             right = right->next;
             newHead = newHead->next;
         }
-        // ListNode* t = temp;
-        // while(t!=nullptr){
-        //     cout<<t->val<<" ";
-        //     t = t->next;
-        // }
-        // cout<<endl;
         return temp->next;
 
     }
@@ -65,7 +59,6 @@ public:
         middle->next = nullptr;
         left = sortList(left);
         right = sortList(right);
-        // return NULL;
         return merge(left,right);
     }
 };
