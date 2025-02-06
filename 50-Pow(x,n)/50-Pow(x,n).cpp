@@ -1,25 +1,21 @@
 class Solution {
 public:
+    double helper(double x, long long int n){
+        if(n==0){
+            return (double) (1.0);
+        }
+        double half = helper(x,n/2);
+        return n%2==0?half*half:half*half*x;
+    }
     double myPow(double x, int n) {
-        int neg = 0;
-        long long nn = n;
-        if(n<0){
-            nn = -1*nn;
-            neg = 1;
+        double res = 1;
+        long long int N = n;
+        if(n>0){
+            res = helper(x,(long long int) n);
+        }else{
+           x = 1.0/x;
+           res = helper(x,-(long long int)n);
         }
-        double ans = 1;
-        while(nn>0){
-            if(nn%2 == 0 ){
-                x = x * x;
-                nn = nn/2;
-            }else{
-                ans = ans*x;
-                nn = nn -1;
-            }
-        }
-        if(neg == 1){
-            ans = (double)1/(double)ans;
-        }
-        return ans;
+        return res;
     }
 };
