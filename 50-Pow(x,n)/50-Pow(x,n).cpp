@@ -13,8 +13,9 @@ public:
         if(n>0){
             res = helper(x,(long long int) n);
         }else{
-           x = 1.0/x;
+        //    x = 1.0/x;
            res = helper(x,-(long long int)n);
+           res = 1/res;
         }
         return res;
     }
