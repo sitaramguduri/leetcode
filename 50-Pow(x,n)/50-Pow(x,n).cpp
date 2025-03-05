@@ -9,7 +9,7 @@ public:
     }
     double myPow(double x, int n) {
         double res = 1;
-        long long int N = n;
+        // long long int N = n;
         if(n>0){
             res = helper(x,(long long int) n);
         }else{
