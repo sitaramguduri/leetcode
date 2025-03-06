@@ -6,10 +6,11 @@ public:
             return ;
         }
         // add the element to the temp
+        
+        helper(nums, i+1, res, temp);
         temp.push_back(nums[i]);
         helper(nums, i+1,res,temp);
-        temp.pop_back();
-        helper(nums, i+1, res, temp);
+        // temp.pop_back();
         return;
 
     }
